@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.TenantManagement.Tenants
+namespace Smp.NobleUI.Pages.TenantManagement.Tenants
 {
     public class IndexModel : TenantManagementPageModel
     {

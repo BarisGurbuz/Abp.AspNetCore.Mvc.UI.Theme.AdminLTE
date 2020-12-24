@@ -1,17 +1,17 @@
 /*!
- * AdminLTE v3.0.0 (https://adminlte.io)
+ * NobleUI v3.0.0 (https://NobleUI.io)
  * Copyright 2014-2019 Colorlib <http://colorlib.com>
- * Licensed under MIT (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/ColorlibHQ/NobleUI/blob/master/LICENSE)
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.adminlte = {}));
+  (global = global || self, factory(global.NobleUI = {}));
 }(this, function (exports) { 'use strict';
 
   /**
    * --------------------------------------------
-   * AdminLTE ControlSidebar.js
+   * NobleUI ControlSidebar.js
    * License MIT
    * --------------------------------------------
    */
@@ -275,7 +275,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE Layout.js
+   * NobleUI Layout.js
    * License MIT
    * --------------------------------------------
    */
@@ -457,7 +457,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE PushMenu.js
+   * NobleUI PushMenu.js
    * License MIT
    * --------------------------------------------
    */
@@ -680,7 +680,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE Treeview.js
+   * NobleUI Treeview.js
    * License MIT
    * --------------------------------------------
    */
@@ -850,7 +850,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE DirectChat.js
+   * NobleUI DirectChat.js
    * License MIT
    * --------------------------------------------
    */
@@ -938,7 +938,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE TodoList.js
+   * NobleUI TodoList.js
    * License MIT
    * --------------------------------------------
    */
@@ -1057,7 +1057,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE CardWidget.js
+   * NobleUI CardWidget.js
    * License MIT
    * --------------------------------------------
    */
@@ -1299,7 +1299,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE CardRefresh.js
+   * NobleUI CardRefresh.js
    * License MIT
    * --------------------------------------------
    */
@@ -1461,7 +1461,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE Dropdown.js
+   * NobleUI Dropdown.js
    * License MIT
    * --------------------------------------------
    */
@@ -1562,7 +1562,7 @@
 
   /**
    * --------------------------------------------
-   * AdminLTE Toasts.js
+   * NobleUI Toasts.js
    * License MIT
    * --------------------------------------------
    */
@@ -1787,4 +1787,4 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
-//# sourceMappingURL=adminlte.js.map
+//# sourceMappingURL=NobleUI.js.map

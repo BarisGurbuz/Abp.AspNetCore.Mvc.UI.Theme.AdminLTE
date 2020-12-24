@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.ProfileManagement
+namespace Smp.NobleUI.ProfileManagement
 {
     public class ProfileManagementPageCreationContext
     {

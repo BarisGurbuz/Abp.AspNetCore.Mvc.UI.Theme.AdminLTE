@@ -1,8 +1,8 @@
-# Abp.AspNetCore.Mvc.UI.Theme.AdminLTE
-ABP framework AdminLTE Theme
+# Smp.NobleUI
+ABP framework NobleUI Theme
 
 
-ABP framework ile geliştirilen AspNet MVC / Razor projeleri için AdminLTE temasıdır.
+ABP framework ile geliştirilen AspNet MVC / Razor projeleri için NobleUI temasıdır.
 
 Öncelikle ABP CLI aracını aşağıdaki komutu kullanarak kuralım.
 
@@ -19,7 +19,7 @@ dotnet tool update -g Volo.Abp.Cli
 Temayı uygulamak için örnek yeni bir proje oluşturalım:
 
 ````shell
-abp new AbpThemeAdminLte
+abp new AbpThemeNobleUI
 ````
 
 Proje ana dizininde Tema projesi için **theme** isminde klasör oluşturalım ve komut satırında **theme** dizinine gidelim:
@@ -29,10 +29,10 @@ mkdir theme
 cd theme
 ````
 
-ABP için **AdminLTE** tema modülü projesini git üzerinden alalım:
+ABP için **NobleUI** tema modülü projesini git üzerinden alalım:
 
 ````shell
-git clone https://github.com/mucahiddanis/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.git
+git clone https://github.com/mucahiddanis/Smp.NobleUI.git
 ````
 
 Proje ana dizinine dönelim:
@@ -42,25 +42,25 @@ cd ..
 cd ..
 ````
 
-**sln** dosyasına AdminLTE tema projesini ekleyelim:
+**sln** dosyasına NobleUI tema projesini ekleyelim:
 
 ````shell
-dotnet sln add theme/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj
+dotnet sln add theme/Smp.NobleUI/Smp.NobleUI.csproj
 ````
 
-`AbpThemeAdminLte.Web` projemize AdminLTE tema projesini referans edelim:
+`AbpThemeNobleUI.Web` projemize NobleUI tema projesini referans edelim:
 
 ````shell
-<ProjectReference Include="..\..\theme\Abp.AspNetCore.Mvc.UI.Theme.AdminLTE\Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj" />
+<ProjectReference Include="..\..\theme\Smp.NobleUI\Smp.NobleUI.csproj" />
 ````
 
-`AbpThemeAdminLte.Web.AbpThemeAdminLteWebModule.cs` web modülünde temamızı konfigüre edelim:
+`AbpThemeNobleUI.Web.AbpThemeNobleUIWebModule.cs` web modülünde temamızı konfigüre edelim:
 
 ````csharp
 [DependsOn(
-        typeof(AbpThemeAdminLteHttpApiModule),
-        typeof(AbpThemeAdminLteApplicationModule),
-        typeof(AbpThemeAdminLteEntityFrameworkCoreDbMigrationsModule),
+        typeof(AbpThemeNobleUIHttpApiModule),
+        typeof(AbpThemeNobleUIApplicationModule),
+        typeof(AbpThemeNobleUIEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAutofacModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpAccountWebIdentityServerModule),
@@ -69,7 +69,7 @@ dotnet sln add theme/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE/Abp.AspNetCore.Mvc.UI.
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    public class AbpThemeAdminLteWebModule : AbpModule
+    public class AbpThemeNobleUIWebModule : AbpModule
 ````
 
 
@@ -80,35 +80,35 @@ typeof(AbpAspNetCoreMvcUiBasicThemeModule),
 Yukarıdaki kodun altına aşağıdaki kodu ekleyelim:
 
 ````csharp
-typeof(AbpAspNetCoreMvcUiAdminLTEThemeModule),
+typeof(AbpAspNetCoreMvcUiNobleUIThemeModule),
 ````
 
 modülün çözümlenmesi için **using** ekleyelim:
 
 ````csharp
-using Abp.AspNetCore.Mvc.UI.Theme.AdminLTE;
+using Smp.NobleUI;
 ````
 
 **DependsOn** listesi son olarak şöyle olmalı:
 
 ````csharp
 [DependsOn(
-        typeof(AbpThemeAdminLteHttpApiModule),
-        typeof(AbpThemeAdminLteApplicationModule),
-        typeof(AbpThemeAdminLteEntityFrameworkCoreDbMigrationsModule),
+        typeof(AbpThemeNobleUIHttpApiModule),
+        typeof(AbpThemeNobleUIApplicationModule),
+        typeof(AbpThemeNobleUIEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAutofacModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpAccountWebIdentityServerModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
-        typeof(AbpAspNetCoreMvcUiAdminLTEThemeModule),
+        typeof(AbpAspNetCoreMvcUiNobleUIThemeModule),
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    public class AbpThemeAdminLteWebModule : AbpModule
+    public class AbpThemeNobleUIWebModule : AbpModule
 ````
 
-AdminLTE temasının css, js, image gibi kaynak dosyaları için **VirtualFileSystem** ayarını yapalım. Bunun için `AbpThemeAdminLte.Web.AbpThemeAdminLteWebModule.cs` dosyasında
+NobleUI temasının css, js, image gibi kaynak dosyaları için **VirtualFileSystem** ayarını yapalım. Bunun için `AbpThemeNobleUI.Web.AbpThemeNobleUIWebModule.cs` dosyasında
 `ConfigureVirtualFileSystem` methoduna ekleme yapalım:
 
 ````chasrp
@@ -118,14 +118,14 @@ private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
             {
                 Configure<AbpVirtualFileSystemOptions>(options =>
                 {
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Domain.Shared"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Domain"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Application.Contracts"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Application"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteWebModule>(hostingEnvironment.ContentRootPath);
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Domain.Shared"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Domain"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Application.Contracts"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Application"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIWebModule>(hostingEnvironment.ContentRootPath);
 
-                    // AdminLTE teması
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}Abp.AspNetCore.Mvc.UI.Theme.AdminLTE"));
+                    // NobleUI teması
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}Smp.NobleUI"));
                 });
             }
         }
@@ -133,8 +133,8 @@ private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
 
 Projeyi **Build** edelim.
 
-`AbpThemeAdminLte.DbMigrator` projesini çalıştıralım.
-`AbpThemeAdminLte.Web` Projesini çalıştıralım.
+`AbpThemeNobleUI.DbMigrator` projesini çalıştıralım.
+`AbpThemeNobleUI.Web` Projesini çalıştıralım.
 
 ![login](screenshots/login.png)
 
@@ -154,6 +154,6 @@ Aktif versiyon
 
 > ABP v3.2.0
 
-`Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj` tema proje dosyasında ABP paketlerinin versiyonlarını güncellemeniz yeterli.
+`Smp.NobleUI.csproj` tema proje dosyasında ABP paketlerinin versiyonlarını güncellemeniz yeterli.
 
 ![theme-abp-package-references](screenshots/theme-abp-package-references.png)

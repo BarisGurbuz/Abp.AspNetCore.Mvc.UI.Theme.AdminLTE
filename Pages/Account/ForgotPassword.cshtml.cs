@@ -5,7 +5,7 @@ using Volo.Abp.Account;
 using Volo.Abp.Identity;
 using Volo.Abp.Validation;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.Account
+namespace Smp.NobleUI.Pages.Account
 {
     public class ForgotPasswordModel : AccountPageModel
     {

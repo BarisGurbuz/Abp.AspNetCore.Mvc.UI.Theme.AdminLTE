@@ -6,7 +6,7 @@ using Volo.Abp.Auditing;
 using Volo.Abp.Identity;
 using Volo.Abp.Validation;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.Account.Components.ProfileManagementGroup.Password
+namespace Smp.NobleUI.Pages.Account.Components.ProfileManagementGroup.Password
 {
     public class AccountProfilePasswordManagementGroupViewComponent : AbpViewComponent
     {

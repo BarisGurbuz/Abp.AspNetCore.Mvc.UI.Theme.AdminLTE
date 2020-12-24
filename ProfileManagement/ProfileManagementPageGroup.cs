@@ -2,7 +2,7 @@
 using System;
 using Volo.Abp;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.ProfileManagement
+namespace Smp.NobleUI.ProfileManagement
 {
     public class ProfileManagementPageGroup
     {

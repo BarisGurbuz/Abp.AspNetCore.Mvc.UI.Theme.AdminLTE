@@ -22,7 +22,7 @@ using Volo.Abp.Validation;
 using IdentityUser = Volo.Abp.Identity.IdentityUser;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.Account
+namespace Smp.NobleUI.Pages.Account
 {
     public class LoginModel : AccountPageModel
     {

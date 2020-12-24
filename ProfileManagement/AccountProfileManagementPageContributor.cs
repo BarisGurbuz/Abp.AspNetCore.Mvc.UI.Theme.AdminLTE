@@ -7,7 +7,7 @@ using Volo.Abp.Account.Web.Pages.Account.Components.ProfileManagementGroup.Perso
 using Volo.Abp.Identity;
 using Volo.Abp.Users;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.ProfileManagement
+namespace Smp.NobleUI.ProfileManagement
 {
     public class AccountProfileManagementPageContributor : IProfileManagementPageContributor
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.ProfileManagement
+namespace Smp.NobleUI.ProfileManagement
 {
     public interface IProfileManagementPageContributor
     {

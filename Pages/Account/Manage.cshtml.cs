@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.ProfileManagement;
+using Smp.NobleUI.ProfileManagement;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.Account
+namespace Smp.NobleUI.Pages.Account
 {
     public class ManageModel : AccountPageModel
     {

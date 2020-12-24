@@ -6,7 +6,7 @@ using Volo.Abp.Identity.Web.Pages.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Validation;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Identity.Roles
+namespace Smp.NobleUI.Identity.Roles
 {
     public class CreateModalModel : IdentityPageModel
     {

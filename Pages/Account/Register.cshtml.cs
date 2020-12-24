@@ -16,7 +16,7 @@ using Volo.Abp.Settings;
 using Volo.Abp.Validation;
 using IdentityUser = Volo.Abp.Identity.IdentityUser;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.Account
+namespace Smp.NobleUI.Pages.Account
 {
     public class RegisterModel : AccountPageModel
     {

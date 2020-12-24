@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smp.NobleUI", "Smp.NobleUI.csproj", "{6A5A4655-0B64-4E48-993D-F9F3291AA83D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A5A4655-0B64-4E48-993D-F9F3291AA83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5A4655-0B64-4E48-993D-F9F3291AA83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5A4655-0B64-4E48-993D-F9F3291AA83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5A4655-0B64-4E48-993D-F9F3291AA83D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {720334C7-13CF-4111-BC8B-9081EE71EA93}
+	EndGlobalSection
+EndGlobal

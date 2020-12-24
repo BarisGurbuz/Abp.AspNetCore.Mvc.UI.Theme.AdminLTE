@@ -1,9 +1,9 @@
 ﻿using Volo.Abp.Localization;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Localization
+namespace Smp.NobleUI.Localization
 {
-    [LocalizationResourceName("AdminLTE")]
-    public class AdminLTEResource
+    [LocalizationResourceName("NobleUI")]
+    public class NobleUIResource
     {
     }
 }

@@ -1,7 +1,7 @@
 
-# Using the AdminLTE Theme with the ABP Framework MVC / Razor Pages UI
+# Using the NobleUI Theme with the ABP Framework MVC / Razor Pages UI
 
-This article shows step by step how to use the AdminLTE Theme for ABP Framework MVC / Razor Page UI applications.
+This article shows step by step how to use the NobleUI Theme for ABP Framework MVC / Razor Page UI applications.
 
 First, let's install the ABP CLI tool using the command below.
 
@@ -18,7 +18,7 @@ dotnet tool update -g Volo.Abp.Cli
 Let's create a sample new project to apply the theme:
 
 ````shell
-abp new AbpThemeAdminLte
+abp new AbpThemeNobleUI
 ````
 
 Let's create a **theme** folder for the theme project in the project main directory and go to the **theme** directory on the command line:
@@ -28,10 +28,10 @@ mkdir theme
 cd theme
 ````
 
-Let's get the **AdminLTE** theme module project for ABP via git:
+Let's get the **NobleUI** theme module project for ABP via git:
 
 ````shell
-git clone https://github.com/mucahiddanis/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.git
+git clone https://github.com/mucahiddanis/Smp.NobleUI.git
 ````
 
 Go back to the project main directory:
@@ -41,25 +41,25 @@ cd ..
 cd ..
 ````
 
-Let's add the AdminLTE theme project to the **sln** file:
+Let's add the NobleUI theme project to the **sln** file:
 
 ````shell
-dotnet sln add theme/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE/Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj
+dotnet sln add theme/Smp.NobleUI/Smp.NobleUI.csproj
 ````
 
-Let's reference the AdminLTE theme project in our `AbpThemeAdminLte.Web` project:
+Let's reference the NobleUI theme project in our `AbpThemeNobleUI.Web` project:
 
 ````shell
-<ProjectReference Include="..\..\theme\Abp.AspNetCore.Mvc.UI.Theme.AdminLTE\Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj" />
+<ProjectReference Include="..\..\theme\Smp.NobleUI\Smp.NobleUI.csproj" />
 ````
 
-Configure our theme in the `AbpThemeAdminLte.Web.AbpThemeAdminLteWebModule.cs` web module:
+Configure our theme in the `AbpThemeNobleUI.Web.AbpThemeNobleUIWebModule.cs` web module:
 
 ````csharp
 [DependsOn(
-        typeof(AbpThemeAdminLteHttpApiModule),
-        typeof(AbpThemeAdminLteApplicationModule),
-        typeof(AbpThemeAdminLteEntityFrameworkCoreDbMigrationsModule),
+        typeof(AbpThemeNobleUIHttpApiModule),
+        typeof(AbpThemeNobleUIApplicationModule),
+        typeof(AbpThemeNobleUIEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAutofacModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpAccountWebIdentityServerModule),
@@ -68,7 +68,7 @@ Configure our theme in the `AbpThemeAdminLte.Web.AbpThemeAdminLteWebModule.cs` w
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    public class AbpThemeAdminLteWebModule : AbpModule
+    public class AbpThemeNobleUIWebModule : AbpModule
 ````
 
 
@@ -79,35 +79,35 @@ typeof(AbpAspNetCoreMvcUiBasicThemeModule),
 Let's add the following code below the code above:
 
 ````csharp
-typeof(AbpAspNetCoreMvcUiAdminLTEThemeModule),
+typeof(AbpAspNetCoreMvcUiNobleUIThemeModule),
 ````
 
 Add **using** to reference theme project
 
 ````csharp
-using Abp.AspNetCore.Mvc.UI.Theme.AdminLTE;
+using Smp.NobleUI;
 ````
 
 The **DependsOn** list should finally be:
 
 ````csharp
 [DependsOn(
-        typeof(AbpThemeAdminLteHttpApiModule),
-        typeof(AbpThemeAdminLteApplicationModule),
-        typeof(AbpThemeAdminLteEntityFrameworkCoreDbMigrationsModule),
+        typeof(AbpThemeNobleUIHttpApiModule),
+        typeof(AbpThemeNobleUIApplicationModule),
+        typeof(AbpThemeNobleUIEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAutofacModule),
         typeof(AbpIdentityWebModule),
         typeof(AbpAccountWebIdentityServerModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
-        typeof(AbpAspNetCoreMvcUiAdminLTEThemeModule),
+        typeof(AbpAspNetCoreMvcUiNobleUIThemeModule),
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    public class AbpThemeAdminLteWebModule : AbpModule
+    public class AbpThemeNobleUIWebModule : AbpModule
 ````
 
-Let's set **VirtualFileSystem** for the source files of AdminLTE theme such as css, js, image. For this, `AbpThemeAdminLte.Web.AbpThemeAdminLteWebModule.cs` in the file. Let's add to the `ConfigureVirtualFileSystem` method:
+Let's set **VirtualFileSystem** for the source files of NobleUI theme such as css, js, image. For this, `AbpThemeNobleUI.Web.AbpThemeNobleUIWebModule.cs` in the file. Let's add to the `ConfigureVirtualFileSystem` method:
 
 ````chasrp
 private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
@@ -116,14 +116,14 @@ private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
             {
                 Configure<AbpVirtualFileSystemOptions>(options =>
                 {
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Domain.Shared"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Domain"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Application.Contracts"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeAdminLte.Application"));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteWebModule>(hostingEnvironment.ContentRootPath);
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Domain.Shared"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Domain"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Application.Contracts"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}AbpThemeNobleUI.Application"));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIWebModule>(hostingEnvironment.ContentRootPath);
 
-                    // AdminLTE teması
-                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeAdminLteApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}Abp.AspNetCore.Mvc.UI.Theme.AdminLTE"));
+                    // NobleUI teması
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpThemeNobleUIApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}Smp.NobleUI"));
                 });
             }
         }
@@ -131,7 +131,7 @@ private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
 
 Let's **Build** the project.
 
-Let's run the `AbpThemeAdminLte.DbMigrator` and `AbpThemeAdminLte.Web` project.
+Let's run the `AbpThemeNobleUI.DbMigrator` and `AbpThemeNobleUI.Web` project.
 
 ![login](screenshots/login.png)
 
@@ -152,6 +152,6 @@ Active version
 
 > ABP v3.2.0
 
-You just need to update the versions of ABP packages in the theme project file `Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.csproj`.
+You just need to update the versions of ABP packages in the theme project file `Smp.NobleUI.csproj`.
 
 ![theme-abp-package-references](screenshots/theme-abp-package-references.png)

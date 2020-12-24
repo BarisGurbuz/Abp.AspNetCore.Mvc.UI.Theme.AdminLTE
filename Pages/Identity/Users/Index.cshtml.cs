@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Identity.Web.Pages.Identity;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Identity.Users
+namespace Smp.NobleUI.Identity.Users
 {
     public class IndexModel : IdentityPageModel
     {

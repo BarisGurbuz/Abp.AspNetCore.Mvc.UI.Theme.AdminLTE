@@ -6,7 +6,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.Web.Pages.TenantManagement.Tenants;
 using Volo.Abp.Validation;
 
-namespace Abp.AspNetCore.Mvc.UI.Theme.AdminLTE.Pages.TenantManagement.Tenants
+namespace Smp.NobleUI.Pages.TenantManagement.Tenants
 {
     public class ConnectionStringsModal : TenantManagementPageModel
     {
