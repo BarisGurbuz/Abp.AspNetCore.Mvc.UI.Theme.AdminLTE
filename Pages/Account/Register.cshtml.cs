@@ -1,12 +1,10 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Account.Settings;
@@ -71,7 +69,7 @@ namespace Smp.NobleUI.Pages.Account
                     return;
                 }
 
-                Input = new PostInput {EmailAddress = emailClaim.Value};
+                Input = new PostInput { EmailAddress = emailClaim.Value };
             }
         }
 

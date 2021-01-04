@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation;
@@ -35,7 +35,7 @@ namespace Smp.NobleUI.Pages.TenantManagement.Tenants
             return NoContent();
         }
 
-        public class TenantInfoModel: ExtensibleObject
+        public class TenantInfoModel : ExtensibleObject
         {
             [Required]
             [DynamicStringLength(typeof(TenantConsts), nameof(TenantConsts.MaxNameLength))]

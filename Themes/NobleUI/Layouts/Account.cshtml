@@ -44,45 +44,17 @@
     <!-- CDN Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.cat.net/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
 </head>
-<body class="hold-transition login-page">
+<body>
     @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Account)
 
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="javascript:;">
-                @*@(ViewBag.Title == null ? BrandingProvider.AppName : ViewBag.Title)*@
-                <img src="~/themes/NobleUI/img/abpNobleUIlogo.png" class="img-responsive ml-n5 mb-2" />
+    <div class="main-wrapper">
+        <div class="page-wrapper full-page">
+            @(await Component.InvokeAsync<PageAlertsViewComponent>())
 
-            </a>
+            @RenderBody()
         </div>
-        @(await Component.InvokeAsync<PageAlertsViewComponent>())
-
-        @if (MultiTenancyOptions.Value.IsEnabled &&
-             (TenantResolveResultAccessor.Result?.AppliedResolvers?.Contains(CookieTenantResolveContributor.ContributorName) == true))
-        {
-            <a id="AbpTenantSwitchLink" href="javascript:;" class="btn btn-block btn-social bg-gradient-success" style="margin-bottom: 10px;">
-                <i class="fa fa-group" style="font-size: 1.2em;"></i> @MultiTenancyStringLocalizer["Tenant"]
-                @if (CurrentTenant.Id == null)
-                {
-                    <span>
-                        @MultiTenancyStringLocalizer["NotSelected"]
-                    </span>
-                }
-                else
-                {
-                    <strong>@(CurrentTenant.Name ?? CurrentTenant.Id.Value.ToString())</strong>
-                }
-            </a>
-        }
-
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                @RenderBody()
-            </div>
-        </div>
-        <!-- /.login-box-body -->
     </div>
+
 
     <abp-script-bundle name="@NobleUIThemeBundles.Scripts.Global" />
 

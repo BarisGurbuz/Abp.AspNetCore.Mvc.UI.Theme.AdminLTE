@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
+using System.Threading.Tasks;
 using Volo.Abp.Account.Localization;
 using Volo.Abp.Account.Web.Pages.Account.Components.ProfileManagementGroup.Password;
 using Volo.Abp.Account.Web.Pages.Account.Components.ProfileManagementGroup.PersonalInfo;

@@ -1,6 +1,11 @@
 ﻿{
   "culture": "tr",
   "texts": {
-    "Nav:Home": "Ana sayfa"
+    "Nav:Home": "Ana sayfa",
+    "Site": "Şantiye",
+    "AccountWelcome": "Hoşgeldiniz! Hesabınıza giriş yapın",
+    "UserNameorEmail": "Kullanıcı Adı veya Eposta",
+    "ForgotPassword": "Şifremi unuttum",
+    "Login": "Giriş"
   }
 }

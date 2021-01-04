@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.UI.Navigation;
 
@@ -35,7 +35,7 @@ namespace Smp.NobleUI.Themes.NobleUI.Components.Menu
                 if (m.Url != null && string.Compare(pageUrl, $"{m.Url}/index", StringComparison.InvariantCultureIgnoreCase) == 0)
                 {
                     m.CssClass = "active";
-                    
+
                     if (menuItem != null) menuItem.CssClass = "active menu-open";
                 }
                 SetMenuItemActivateCssClass(pageUrl, m, parentMenu);

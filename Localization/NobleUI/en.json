@@ -6,5 +6,11 @@
     "Input:Search": "Search",
     "AllRightsReserved": "All rights reserved",
     "Version": "Version",
+    "Site": "Construction Site",
+    "AccountWelcome": "Welcome back! Log in to your account",
+    "UserNameorEmail": "User Name or Email",
+    "ForgotPassword": "Forgot Password",
+    "Login": "Login"
+
   }
 }

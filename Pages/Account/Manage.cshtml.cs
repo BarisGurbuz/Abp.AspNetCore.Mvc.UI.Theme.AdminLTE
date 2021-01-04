@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Smp.NobleUI.ProfileManagement;
+using System.Threading.Tasks;
 
 namespace Smp.NobleUI.Pages.Account
 {
@@ -10,7 +10,7 @@ namespace Smp.NobleUI.Pages.Account
         [HiddenInput]
         [BindProperty(SupportsGet = true)]
         public string ReturnUrl { get; set; }
-        
+
         public ProfileManagementPageCreationContext ProfileManagementPageCreationContext { get; private set; }
 
         protected ProfileManagementPageOptions Options { get; }

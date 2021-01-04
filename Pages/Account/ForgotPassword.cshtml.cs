@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Account;
 using Volo.Abp.Identity;
 using Volo.Abp.Validation;

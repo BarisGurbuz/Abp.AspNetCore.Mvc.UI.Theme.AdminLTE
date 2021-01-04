@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Smp.NobleUI.Themes.NobleUI.Components.Menu;
 using Smp.NobleUI.Themes.NobleUI.Components.Toolbar.LanguageSwitch;
-using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Toolbars;
 using Volo.Abp.Localization;
 using Volo.Abp.Users;

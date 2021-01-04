@@ -1,9 +1,7 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 using Volo.Abp.TenantManagement;
-using Volo.Abp.TenantManagement.Web.Pages.TenantManagement.Tenants;
 using Volo.Abp.Validation;
 
 namespace Smp.NobleUI.Pages.TenantManagement.Tenants

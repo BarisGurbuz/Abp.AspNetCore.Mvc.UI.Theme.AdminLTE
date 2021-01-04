@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Auditing;
 using Volo.Abp.Identity;

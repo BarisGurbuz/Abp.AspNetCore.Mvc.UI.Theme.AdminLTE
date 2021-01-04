@@ -1,8 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Identity;
-using Volo.Abp.Identity.Web.Pages.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Validation;
 
@@ -23,7 +22,7 @@ namespace Smp.NobleUI.Identity.Roles
         public virtual Task<IActionResult> OnGetAsync()
         {
             Role = new RoleInfoModel();
-            
+
             return Task.FromResult<IActionResult>(Page());
         }
 

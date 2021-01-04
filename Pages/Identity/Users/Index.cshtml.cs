@@ -1,6 +1,5 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Volo.Abp.Identity.Web.Pages.Identity;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Smp.NobleUI.Identity.Users
 {

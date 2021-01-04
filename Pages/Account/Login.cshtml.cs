@@ -20,7 +20,6 @@ using Volo.Abp.Security.Claims;
 using Volo.Abp.Settings;
 using Volo.Abp.Validation;
 using IdentityUser = Volo.Abp.Identity.IdentityUser;
-using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Smp.NobleUI.Pages.Account
 {

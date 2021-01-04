@@ -45,29 +45,31 @@
     <title>@pageTitle</title>
 
     <abp-style-bundle name="@NobleUIThemeBundles.Styles.Global" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
     @await Component.InvokeAsync(typeof(WidgetStylesViewComponent))
 
     @await RenderSectionAsync("styles", false)
 
     @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.Last, StandardLayouts.Application)
-    
+
     <!-- CDN Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.cat.net/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
 </head>
-<body class="sidebar-mini layout-fixed">
+<body class="sidebar-dark">
     @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Application)
 
-    <div class="wrapper">
-        @(await Component.InvokeAsync<HeaderViewComponent>())
+    <div class="main-wrapper">
+      
 
         @(await Component.InvokeAsync<MenuViewComponent>())
 
-        <div class="content-wrapper">
+        <div class="page-wrapper">
+            @(await Component.InvokeAsync<HeaderViewComponent>())
             @RenderBody()
+            @(await Component.InvokeAsync<FooterViewComponent>())
         </div>
 
-        @(await Component.InvokeAsync<FooterViewComponent>())
+     
 
         @(await Component.InvokeAsync<ControlSidebarViewComponent>())
     </div>
